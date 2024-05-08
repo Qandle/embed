@@ -1,0 +1,25 @@
+init
+เพิ่ม
+
+PCMSK0 |= (1 << PB0);
+ไม่ก็
+PCMSK0 |= (1 << INT0);
+ไม่ก็
+PCMSK0 |= (1 << PCINT0);
+PCICR |= (1 << PCIE0);
+
+
+ISR(PCINT0_vect)
+{
+  	// free button
+    if (PINB & (1 << PORTB0)){
+      	// pushed button over 3 second -> close all led
+        clearLCD();
+        lcdDisplayString("Door is open");
+    }
+  
+  	// push button
+//  	else {
+//      start_time = timer;
+//  	}
+}
