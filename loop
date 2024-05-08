@@ -1,0 +1,7 @@
+void loop()
+{
+    int asciiCollector[4];
+    lcdDisplayString("It :");
+    sprintf(buffer, "%s", asciiCollector);
+    _delay_ms(2000);
+}
